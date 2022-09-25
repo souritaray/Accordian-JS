@@ -5,7 +5,7 @@
 This a webpage containing some FAQs. Do click on the button to check the answers to the faqs. It is done with the help of HTML, CSS and JAVASCRIPT. 
 
 ***
-## Name: SOURITA RAY
+Name: SOURITA RAY
 ***
 
 ## Time taken to complete the project
@@ -22,7 +22,7 @@ https://user-images.githubusercontent.com/100030958/192130243-ae5f0521-096f-4496
 
 ## Live link
 
-
+[Accordian Live Link](https://accordian-js-souritaray.netlify.app/)
 
 ## Contact me on:
 
