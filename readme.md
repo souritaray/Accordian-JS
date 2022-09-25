@@ -5,7 +5,7 @@
 This a webpage containing some FAQs. Do click on the button to check the answers to the faqs. It is done with the help of HTML, CSS and JAVASCRIPT. 
 
 ***
-Name: SOURITA RAY
+## Name: SOURITA RAY
 ***
 
 ## Time taken to complete the project
