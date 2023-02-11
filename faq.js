@@ -52,35 +52,15 @@ const faqData = [
     faqs.push([ans,showButton]);
     
   }
- // showFaq();
+ 
   function showFaq(i){
     let d=document.getElementsByClassName("show_btn");
     let a=document.getElementsByTagName("p");
     a[i].classList.remove("hidden");
     btnStatusUpdate(a[i],d[i]);
-
-  // for(let i=0;i<faqs.length;i++){
-  //     faqs[i][1].addEventListener("click",()=>{
-  //       let status=btnStatusUpdate(faqs[i][1]);
-          
-  //         if(status==true){
-  //           faqs[i][0].classList.remove("hidden");
-  //           faqs[i][1].innerHTML="-";  
-  //         }
-  //          else{
-  //           faqs[i][0].classList.add("hidden");
-  //           faqs[i][1].innerHTML="+";  
-  //          }        
-  //       })
-  //  } 
   }
 
   function btnStatusUpdate(ans,btn){
-    // if(item.innerHTML=="+")
-    // return true;
-    // else 
-    // return false;
-
     if(btn.innerHTML==="+"){
       btn.innerHTML="-";
     }
