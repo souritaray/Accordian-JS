@@ -1,84 +1,91 @@
 const faqData = [
-  {
-    id: 1,
-    question: "Who are we?",
-    answer:
-      "We enable upscaling careers through flexible, interactive and collaborative learning. We believe in building learning communities by bringing together mentors, young minds, and creators.",
-  },
-  {
-    id: 2,
-    question: "What do we do?",
-    answer:
-      "Building learning communities with Our Affordable & Competent Courses",
-  },
-  {
-    id: 3,
-    question: "Are the community classes boring?",
-    answer: "No, not at all!!!",
-  },
-];
-
-const accordianBody=document.querySelector(".accordian_body");
-const faqs = [];
-
-function createFaq(i) {
-
-  //creating elements
-  let mainDiv=document.createElement("div");
-  let header=document.createElement("div");
-  let h3=document.createElement("h3");
-  let p=document.createElement("p");
-  let button=document.createElement("button");
-
-  //giving classnames, id names, to the newly created elements
-  mainDiv.className="faq";
-  header.className="faq_header";
-  button.className="show_btn";
-  h3.textContent=faqData[i].question;
-  p.textContent=faqData[i].answer;
-  p.className="hidden";
-  button.innerText="+";
-  mainDiv.id=faqData[i].id;
-
-  //organsing all the elements
-  accordianBody.appendChild(mainDiv);
-mainDiv.appendChild(header);
-header.appendChild(h3);
-header.appendChild(button);
-mainDiv.appendChild(p);
-
-//pushing button and paragraph to a blank array as an object
-let obj={};
-obj["btn"]=button;
-obj["para"]=p;
-faqs.push(obj);
-
-}
-
-for(let x=0;x<faqData.length;x++)
-{
-  createFaq(x);
-  
-}
-
-function showFaq() {
-  for (let index = 0; index < faqs.length; index++) {
-    faqs[index].btn.addEventListener("click",function()
     {
-      if(faqs[index].btn.innerText=="+"){
-        faqs[index].para.style.display="block";
-        faqs[index].btn.innerText="-";
-      }
-      else{
-        faqs[index].para.style.display="none";
-        faqs[index].btn.innerText="+";
-      }
-      
-    })
-}
+      id: 1,
+      question: "Who are we?",
+      answer:
+        "We enable upscaling careers through flexible, interactive and collaborative learning. We believe in building learning communities by bringing together mentors, young minds, and creators.",
+    },
+    {
+      id: 2,
+      question: "What do we do?",
+      answer:
+        "Building learning communities with Our Affordable & Competent Courses",
+    },
+    {
+      id: 3,
+      question: "Are the community classes boring?",
+      answer: "No, not at all!!!",
+    },
+  ];
   
-}
-showFaq();
+  const accordianBody=document.querySelector(".accordian_body");
+  const faqs = [];
+  for(let i=0;i<faqData.length;i++){
+    createFaq(i);
+    
+  }
+  
+  function createFaq(i) {
+    
+    let faq=document.createElement("div");
+    faq.className="faq";
+    accordianBody.appendChild(faq);
+    let faqheader=document.createElement("div");
+    faqheader.className="faq_header";
+    faq.appendChild(faqheader);
+    let ques=document.createElement("h3");
+    
+    ques.innerHTML=faqData[i].question;
+    faqheader.appendChild(ques);
+    
+    let showButton=document.createElement("button");
+    showButton.className="show_btn";
+    showButton.innerHTML="+";
+    showButton.setAttribute("onclick","showFaq("+i+")");
+    faqheader.appendChild(showButton);
 
+    let ans=document.createElement("p");
+    ans.innerHTML=faqData[i].answer;
+    ans.classList.add("hidden");
+    faq.appendChild(ans);
 
+    faqs.push([ans,showButton]);
+    
+  }
+ // showFaq();
+  function showFaq(i){
+    let d=document.getElementsByClassName("show_btn");
+    let a=document.getElementsByTagName("p");
+    a[i].classList.remove("hidden");
+    btnStatusUpdate(a[i],d[i]);
 
+  // for(let i=0;i<faqs.length;i++){
+  //     faqs[i][1].addEventListener("click",()=>{
+  //       let status=btnStatusUpdate(faqs[i][1]);
+          
+  //         if(status==true){
+  //           faqs[i][0].classList.remove("hidden");
+  //           faqs[i][1].innerHTML="-";  
+  //         }
+  //          else{
+  //           faqs[i][0].classList.add("hidden");
+  //           faqs[i][1].innerHTML="+";  
+  //          }        
+  //       })
+  //  } 
+  }
+
+  function btnStatusUpdate(ans,btn){
+    // if(item.innerHTML=="+")
+    // return true;
+    // else 
+    // return false;
+
+    if(btn.innerHTML==="+"){
+      btn.innerHTML="-";
+    }
+    else{
+      btn.innerHTML="+";
+      ans.classList.add("hidden");
+    }
+  }
