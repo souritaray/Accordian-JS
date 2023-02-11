@@ -16,9 +16,13 @@ About 6 hours
 
 
 
+https://user-images.githubusercontent.com/100030958/192130243-ae5f0521-096f-4496-ab08-23b2b61475b6.mp4
+
+
+
 ## Live link
 
-
+[Accordian Live Link](https://accordian-js-souritaray.netlify.app/)
 
 ## Contact me on:
 
